@@ -1,0 +1,26 @@
+.navbar {
+    background: #66CDAA;
+    color: white;
+}
+.title {
+    justify-content: space-between;
+}
+.btn {
+    background: #FFF;
+    border-color: #66CDAA;
+    color: black;
+}
+.data {
+    display: inline-flex;
+}
+.text {
+    font-size: 15px;
+    margin-left: 10px;
+}
+.textA {
+    font-size: 15px;
+}
+.text-input {
+    margin-left: 5px;
+    height: 100;
+}

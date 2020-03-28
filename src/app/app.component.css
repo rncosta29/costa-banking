@@ -1,0 +1,8 @@
+.p {
+    color: blue;
+}
+.box {
+    display: inline-flex;
+    width: 100%;
+    flex: 1;
+}

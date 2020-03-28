@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse bg-faded">
+    <h1 class="navbar-brand mb-0">{{ title }}</h1>
+    <div>
+        <div class="dataClass">
+            <div class="data">
+                <label class="text">Agêncy: </label>
+                <input
+                    class="text-input"
+                    style="height: 24px;"
+                    maxlength="4"
+                    size="1"
+                    (input) = "atualizaAgency($event)"
+                    [value] = "agency"
+                />
+            </div>
+            <div class="data">
+                <label class="text">Account: </label>
+                <input
+                    class="text-input"
+                    style="height: 24px;"
+                    maxlength="7"
+                    size="4"
+                    (input) = "atualizaAccount($event)"
+                    [value] = "account"
+                />
+            </div>
+            <div class="data">
+                <label class="text">Password: </label>
+                <input
+                    class="text-input"
+                    style="height: 24px;"
+                    maxlength="16"
+                    size="14"
+                    type="text"
+                    (input) = "atualizaPassword($event)"
+                    [value] = "password"
+                />
+            </div>
+        </div>
+    </div>
+    <button
+        (click)="sucessful(agency, account, password)"
+        type="submit"
+        class="btn btn-primary"
+    >
+        {{ buttonEnter }}
+    </button>
+</nav>
