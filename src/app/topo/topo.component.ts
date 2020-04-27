@@ -7,40 +7,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopoComponent implements OnInit {
 
-  public title: string = 'COST BANKING - THE BEST BANKING OF CANADA';
-  public buttonEnter: string = 'Enter';
+  public title: string = 'Banco Costa - O melhor banco do Brasil!!';
 
-  public agency: string = ''
-  public account: string = ''
-  public password: string = ''
+  public agencia: string = ''
+  public conta: string = ''
+  public senha: string = ''
+
+  public logado: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public atualizaAgency(response: Event): void {
-    this.agency = (<HTMLInputElement>response.target).value;
+  public atualizaAgencia(response: Event): void {
+    this.agencia = (<HTMLInputElement>response.target).value;
   }
 
-  public atualizaAccount(response: Event): void {
-    this.account = (<HTMLInputElement>response.target).value;
+  public atualizaConta(response: Event): void {
+    this.conta = (<HTMLInputElement>response.target).value;
   }
 
-  public atualizaPassword(response: Event): void {
-    this.password = (<HTMLInputElement>response.target).value;
+  public atualizaSenha(response: Event): void {
+    this.senha = (<HTMLInputElement>response.target).value;
   }
 
-  public sucessful(agency: string, account: string, password: string) {
+  public logar(agencia: string, conta: string, senha: string) {
 
-    this.agency = agency
-    this.account = account
-    this.password = password
+    this.agencia = agencia
+    this.conta = conta
+    this.senha = senha
 
-    if(agency === '1234' && account === '1234567' && password === 'Rafa2905') {
-      alert('Ok')
+    if(agencia === '1234' && conta === '1234567' && senha === 'Rafa2905') {
+      this.logado = true;
     } else {
-      alert('Deu zica')
+      alert('Deu zica');
     }
+  }
+
+  public sair():void {
+    this.logado = false;
   }
 }

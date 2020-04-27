@@ -1,48 +1,40 @@
-<nav class="navbar navbar-inverse bg-faded">
+<div class="navbar wraper">
     <h1 class="navbar-brand mb-0">{{ title }}</h1>
-    <div>
+    <div class="row" *ngIf="logado === false">
         <div class="dataClass">
             <div class="data">
-                <label class="text">Agêncy: </label>
-                <input
-                    class="text-input"
-                    style="height: 24px;"
-                    maxlength="4"
-                    size="1"
-                    (input) = "atualizaAgency($event)"
-                    [value] = "agency"
-                />
+                <label class="text">Agencia: </label>
+                <input class="text-input" style="height: 24px;" maxlength="4" size="1" (input)="atualizaAgencia($event)"
+                    [value]="agencia" />
             </div>
             <div class="data">
-                <label class="text">Account: </label>
-                <input
-                    class="text-input"
-                    style="height: 24px;"
-                    maxlength="7"
-                    size="4"
-                    (input) = "atualizaAccount($event)"
-                    [value] = "account"
-                />
+                <label class="text">Conta: </label>
+                <input class="text-input" style="height: 24px;" maxlength="7" size="4" (input)="atualizaConta($event)"
+                    [value]="conta" />
             </div>
             <div class="data">
-                <label class="text">Password: </label>
-                <input
-                    class="text-input"
-                    style="height: 24px;"
-                    maxlength="16"
-                    size="14"
-                    type="text"
-                    (input) = "atualizaPassword($event)"
-                    [value] = "password"
-                />
+                <label class="text">Senha: </label>
+                <input class="text-input" style="height: 24px;" maxlength="16" size="14" type="text"
+                    (input)="atualizaSenha($event)" [value]="senha" />
             </div>
         </div>
     </div>
-    <button
-        (click)="sucessful(agency, account, password)"
-        type="submit"
-        class="btn btn-primary"
-    >
-        {{ buttonEnter }}
-    </button>
-</nav>
+
+    <div class="buttons" *ngIf="logado === false">
+        <button (click)="logar(agencia, conta, senha)" type="submit" class="btn btn-primary">
+            Entrar
+        </button>
+        <button type="submit" class="btn btn-primary" routerLink="/cadastro">
+            Cadastrar
+        </button>
+    </div>
+
+    <div class="buttons" *ngIf="logado === true">
+        <button (click)="sair()" type="submit" class="btn btn-primary">
+            Sair
+        </button>
+        <button type="submit" class="btn btn-primary" routerLink="/register">
+            Cadastrar
+        </button>
+    </div>
+</div>

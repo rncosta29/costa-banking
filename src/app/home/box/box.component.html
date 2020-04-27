@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="col-sm">
+        <img
+            *ngFor="let imagem of imagens"
+            [src]="imagem.url"
+            [@banner]="imagem.estado"
+        />
+        <h3>{{ title }}</h3>
+        <h5>{{ text }}</h5>
+    </div>
+</div>
